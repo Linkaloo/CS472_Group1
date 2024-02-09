@@ -35,4 +35,4 @@ def get_counter(name):
     """Gets a counter"""
     app.logger.info(f"Request to get counter: {name}")
     global COUNTERS
-    return {"message": f"CouDnter: {name} reads at: {COUNTERS[name]}"}, status.HTTP_200_OK
+    return {"message": f"Counter: {name} reads at: {COUNTERS[name]}"}, status.HTTP_200_OK
