@@ -18,6 +18,7 @@ from src.counter import app
 # we need to import the file that contains the status codes
 from src import status
 
+
 class CounterTest(TestCase):
     """Counter tests"""
 
@@ -56,5 +57,3 @@ class CounterTest(TestCase):
         res = self.client.get('/counters/read/dar')
         self.assertEqual(res.json["message"], "Counter: dar reads at: 1")
         self.assertEqual(res.status_code, status.HTTP_200_OK)
-
-
