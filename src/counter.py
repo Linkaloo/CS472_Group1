@@ -26,8 +26,6 @@ def update_counter(name):
     """Updates a counter"""
     app.logger.info(f"Request to update counter: {name}")
     global COUNTERS
-    if name not in COUNTERS:
-        return {"Message": f"Counter {name} does not exist"}, status.HTTP_409_CONFLICT
     COUNTERS[name] = COUNTERS[name] + 1
     return {name: COUNTERS[name]}, status.HTTP_200_OK
 
@@ -37,6 +35,4 @@ def get_counter(name):
     """Gets a counter"""
     app.logger.info(f"Request to get counter: {name}")
     global COUNTERS
-    if name not in COUNTERS:
-        return {"message": f"Counter {name} does not exist"}, status.HTTP_409_CONFLICT
     return {"message": f"CouDnter: {name} reads at: {COUNTERS[name]}"}, status.HTTP_200_OK
