@@ -57,7 +57,7 @@ class CounterTest(TestCase):
         res = self.client.get('/counters/read/dar')
         self.assertEqual(res.json["message"], "Counter: dar reads at: 1")
         self.assertEqual(res.status_code, status.HTTP_200_OK)
-    
+
     def test_delete_a_counter(self):
         post = self.client.post('/counters/eor')
         self.assertEqual(post.status_code, status.HTTP_201_CREATED)
@@ -68,4 +68,3 @@ class CounterTest(TestCase):
         res = self.client.get('/counters/read/eor')
         self.assertEqual(res.json["message"], "Counter eor does not exist")
         self.assertEqual(res.status_code, status.HTTP_404_NOT_FOUND)
-        
